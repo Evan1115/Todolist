@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+       
+        <title>Todolist</title>
+       <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+      <h1>It is <%= kindofday %></h1>
+      <ui>
+       
+      <%  for( let i in newitem){ %>
+            <li><%= newitem[i] %></li>
+       <% } %>
+        
+      </ui>
+
+      <form class="" action="/" method="post">
+        <input type="text" name ="newItem">
+        <button type="submit" name="button">Add Item</button>
+      </form>
+
+    </body>
+</html>
