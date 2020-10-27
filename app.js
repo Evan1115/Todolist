@@ -2,9 +2,10 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 
-var item = ["wash cloth"];
+var items = [];
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 app.set('view engine', 'ejs');
 
@@ -27,12 +28,15 @@ app.get("/", function (req, res) {
 
    res.render("list", {
       kindofday: day,
-      newitem: item
+      itemAdded: items
    });
 });
 
-app.post("/", function (req,res) {
-   item.push(req.body.newItem);
+app.post("/", function (req, res) {
+
+   let addeditem = req.body.newItem;
+
+   items.push(addeditem);
    
    res.redirect("/")
    

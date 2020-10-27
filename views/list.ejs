@@ -8,19 +8,33 @@
        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-      <h1>It is <%= kindofday %></h1>
-      <ui>
-       
-      <%  for( let i in newitem){ %>
-            <li><%= newitem[i] %></li>
-       <% } %>
-        
-      </ui>
+      <div class="box" id="heading">
+        <h1><%= kindofday %></h1>
+      </div>
+      
+      <div class="box">
 
-      <form class="" action="/" method="post">
-        <input type="text" name ="newItem">
-        <button type="submit" name="button">Add Item</button>
-      </form>
+        <%  for( let i in itemAdded){ %>
+
+          <div class="item">
+            <input type="checkbox">
+            <p><%= itemAdded[i] %></p>
+          </div>
+         
+        <% } %>
+
+        <form class="item" action="/" method="post">
+          <input type="text" name ="newItem" placeholder="New Item" autocomplete="off">
+          <button type="submit" name="button">+</button>
+        </form>
+
+      </div>
+     
+       
+      
+  
+
+   
 
     </body>
 </html>
